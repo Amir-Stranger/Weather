@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import "src/assets/fonts/font";
+
+body {
+  font-family: Champagne sans-serif;
+  color: white;
+  font-size: .8rem;
+}
+
+.card {
+  background-color: #00000061;
+  border-radius: .75rem;
+  border: 1px solid #ffffff87;
+  padding: .5rem;
+}
+

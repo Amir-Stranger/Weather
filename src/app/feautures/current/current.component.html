@@ -1,0 +1,5 @@
+<div *ngIf="currentData" class="card condition-card">
+  <p class="condition-title">{{currentData.current.condition.text}}</p>
+  <img [src]="currentData.current.condition.icon" width="100px" alt="">
+  <b class="condition-title">{{currentData.current.temp_c}} </b>
+</div>
