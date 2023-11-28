@@ -1,5 +1,57 @@
 <div *ngIf="currentData" class="card condition-card">
-  <p class="condition-title">{{currentData.current.condition.text}}</p>
-  <img [src]="currentData.current.condition.icon" width="100px" alt="">
-  <b class="condition-title">{{currentData.current.temp_c}} </b>
+  <div class="location-section">
+    <div class="condition-title">
+      <img width="30px" src="assets/images/icons/pin.svg">
+      {{currentData?.location?.country}} - {{currentData?.location?.name}}
+    </div>
+
+    <div class="date-title">
+      <div>{{currentData?.location?.localtime | date:'MMMM dd'}}</div>
+      <div>{{currentData?.location?.localtime | date:'cccc'}}</div>
+    </div>
+
+    <div class="">
+      <h2 class="temp-text">
+        <img width="40px" src="assets/images/icons/temperature.svg" alt="">
+        {{currentData.current.temp_c}}
+        <span class="temp-icon">&#9900;</span></h2>
+      <span>Feels like {{currentData.current.feelslike_c}} </span>
+    </div>
+
+  </div>
+  <div style="height: 60vh;position: relative">
+    <img src="assets/images/weather-conditions/clody.svg" width="600px" alt="">
+    <p class="condition-text">{{currentData.current.condition.text}}</p>
+  </div>
+
+  <div class="location-section">
+    <div class="reload-icon">
+      <img width="30px" src="assets/images/icons/reload.svg">
+    </div>
+
+    <div class="date-title">
+      <div class="details-items">
+        <img width="30px" src="assets/images/icons/sunrise.svg" alt="">
+        <span>{{astronomy?.astronomy?.astro?.sunrise}}</span>
+      </div>
+      <div class="details-items">
+        <img width="30px" src="assets/images/icons/sunset.svg" alt="">
+        <span>{{astronomy?.astronomy?.astro?.sunset}}</span>
+      </div>
+      <div class="details-items">
+        <img width="30px" src="assets/images/icons/water.svg" alt="">
+        <span>{{currentData?.current?.humidity}}</span>
+      </div>
+      <div class="details-items">
+        <img width="30px" src="assets/images/icons/wind.svg" alt="">
+        <span>{{currentData?.current?.wind_kph}} km/h</span>
+      </div>
+      <div class="details-items">
+        <img width="30px" src="assets/images/icons/compass.svg" alt="">
+        <span>{{currentData?.current?.wind_dir}}</span>
+      </div>
+
+    </div>
+
+  </div>
 </div>

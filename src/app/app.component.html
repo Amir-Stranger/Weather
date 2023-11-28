@@ -1,5 +1,10 @@
 <div class="background-container">
-<div >
   <app-current [currentData]="currentData"></app-current>
-</div>
+  <div class="future">
+    <div *ngFor="let item of forecast?.forecast?.forecastday" class="border">
+      <img width="50%" [src]="item.day.condition.icon" alt="">
+      <h2 class="my-0">{{item.date | date:'EEEE'}}</h2>
+      <h4 class="my-0 temp-title">{{item.day.avgtemp_c}}  <span class="temp-icon">&#9900;</span></h4>
+    </div>
+  </div>
 </div>
